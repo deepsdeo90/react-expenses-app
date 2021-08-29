@@ -1,0 +1,12 @@
+.expense-item__date{
+    border:2px solid grey;
+    border-radius: 3px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.expense-item__month {
+    font-weight: bold;
+}

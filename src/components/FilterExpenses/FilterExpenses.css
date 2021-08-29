@@ -1,0 +1,22 @@
+.filter_outer{
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    padding: 10px;
+}
+.filter_inner_year{
+    align-self: flex-end;
+}
+select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.filter_inner_month{
+    display: flex;
+    justify-content: space-between;
+}

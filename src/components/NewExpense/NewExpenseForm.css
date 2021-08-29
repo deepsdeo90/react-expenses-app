@@ -1,0 +1,33 @@
+input[type=text], input[type=date],  input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 100%;
+    background-color: #40005D;
+    color: #FFF;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid #FFF;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+  
+  button:hover {
+    background-color: #40005D;
+  }
+  
+  .new-expense__controls {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 40%;
+    margin: 0 auto;
+  }
