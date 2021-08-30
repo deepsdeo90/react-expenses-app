@@ -1,4 +1,4 @@
-import "./FilterExpenses.css";
+import styles from "./FilterExpenses.module.css";
 import Card from "../UI/Card";
 import ExpenseChart from "../Expenses/ExpenseChart";
 
@@ -9,8 +9,8 @@ const FilterExpenses = (props) => {
   };
 
   return (
-    <Card className="filter_outer">
-      <form className="filter_inner_year">
+    <Card className={styles.filter_outer}>
+      <form className={styles.filter_inner_year}>
         <select onChange={changeFilterHandler}>
           <option value="">Select</option>
           <option value="2022">2022</option>

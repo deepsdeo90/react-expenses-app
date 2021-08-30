@@ -1,4 +1,4 @@
-import "./Expenses.css";
+import styles from "./Expenses.module.css";
 import FilterExpenses from "../FilterExpenses/FilterExpenses";
 import { useState } from "react";
 import ExpensesList from "./ExpensesList";
@@ -24,7 +24,7 @@ const Expenses = (props) => {
         expenses={filteredExpense}
       />
 
-      <div className="expenses">
+      <div className={styles.expenses}>
         <ExpensesList filteredExpense={filteredExpense} />
       </div>
     </>

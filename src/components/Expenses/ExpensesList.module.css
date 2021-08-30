@@ -1,0 +1,9 @@
+ul {
+  padding: 0;
+}
+
+.expense-item-error {
+  padding: 20px;
+  width: 70%;
+  color: red;
+}
