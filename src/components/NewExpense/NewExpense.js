@@ -1,6 +1,7 @@
 import styles from "./NewExpense.module.css";
 import NewExpenseForm from "./NewExpenseForm";
 import { useState } from "react";
+import Button from "../UI/Button";
 
 const NewExpense = (props) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -28,11 +29,7 @@ const NewExpense = (props) => {
           onCancel={stopEditing}
         />
       )}
-      {!isEditing && (
-        <button onClick={startEditing} className={styles.btn}>
-          Add New Expense
-        </button>
-      )}
+      {!isEditing && <Button onClick={startEditing}>Add New Expense</Button>}
     </div>
   );
 };

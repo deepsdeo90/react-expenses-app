@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./NewExpenseForm.module.css";
+import Button from "../UI/Button";
 
 const NewExpenseForm = (props) => {
   const [userInput, setUserInput] = useState({
@@ -25,6 +26,14 @@ const NewExpenseForm = (props) => {
   };
   const submitHandler = (event) => {
     event.preventDefault();
+    if (
+      userInput.enteredTitle === "" ||
+      userInput.enteredAmount === "" ||
+      userInput.enteredDate === ""
+    ) {
+      return;
+    }
+
     const expenseData = {
       title: userInput.enteredTitle,
       amount: userInput.enteredAmount,
@@ -44,16 +53,18 @@ const NewExpenseForm = (props) => {
     <form onSubmit={submitHandler}>
       <div>
         <div className={styles["new-expense_control"]}>
-          <label>Expense Title</label>
+          <label htmlFor="expense_title">Expense Title</label>
           <input
+            id="expense_title"
             type="text"
             onChange={titleChangeHandler}
             value={userInput.enteredTitle}
           />
         </div>
         <div className={styles["new-expense_control"]}>
-          <label>Expense Amount</label>
+          <label htmlFor="expense_amount">Expense Amount</label>
           <input
+            id="expense_amount"
             type="number"
             min="0.1"
             step="0.1"
@@ -62,8 +73,9 @@ const NewExpenseForm = (props) => {
           />
         </div>
         <div className={styles["new-expense_control"]}>
-          <label>Date</label>
+          <label htmlFor="expense_date">Date</label>
           <input
+            id="expense_date"
             type="date"
             min="2019-01-01"
             max="2022-01-01"
@@ -72,12 +84,12 @@ const NewExpenseForm = (props) => {
           />
         </div>
         <div className={styles.btn_holder}>
-          <button className={styles.btn} onClick={props.onCancel}>
+          <Button onClick={props.onCancel} type="button">
             Cancel
-          </button>
-          <button className={styles.btn} type="submit">
+          </Button>
+          <Button onClick={submitHandler} type="submit">
             Submit
-          </button>
+          </Button>
         </div>
       </div>
     </form>
