@@ -21,7 +21,7 @@ const FilterExpenses = (props) => {
           <option value="2017">2017</option>
         </select>
       </form>
-      <ExpenseChart expenses={props.expenses} />
+      {props.selected && <ExpenseChart expenses={props.expenses} />}
     </Card>
   );
 };
