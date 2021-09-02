@@ -1,8 +1,6 @@
-import Expenses from './components/Expenses/Expenses';
-import NewExpense from './components/NewExpense/NewExpense';
-import {useState} from 'react';
-
-
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
+import { useState } from "react";
 
 const App = () => {
   /*const expenses =[
@@ -15,21 +13,19 @@ const App = () => {
   ];*/
   const [expenses, setExpenses] = useState([]);
 
-  const newExpenseDataHandler = (newExpense) =>{
+  const newExpenseDataHandler = (newExpense) => {
     console.log(newExpense);
-    setExpenses((prevExpenses)=>{
+    setExpenses((prevExpenses) => {
       return [newExpense, ...prevExpenses];
-    })
-   }
+    });
+  };
 
   return (
     <div>
-       <div >
-        <NewExpense newExpenseData={newExpenseDataHandler}></NewExpense>
-        <Expenses expenses={expenses} />
-      </div>
+      <NewExpense newExpenseData={newExpenseDataHandler}></NewExpense>
+      <Expenses expenses={expenses} />
     </div>
   );
-}
+};
 
 export default App;

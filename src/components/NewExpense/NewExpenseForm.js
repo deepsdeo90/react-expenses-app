@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./NewExpenseForm.module.css";
 import Button from "../UI/Button";
 import Modal from "../UI/Modal";
+import Wrapper from "../Helpers/Wrapper";
 
 const NewExpenseForm = (props) => {
   const [userInput, setUserInput] = useState({
@@ -59,7 +60,7 @@ const NewExpenseForm = (props) => {
   };
 
   return (
-    <div>
+    <Wrapper>
       {error !== "" && (
         <Modal title="Error" message={error} onCancel={closeModel} />
       )}
@@ -106,7 +107,7 @@ const NewExpenseForm = (props) => {
           </div>
         </div>
       </form>
-    </div>
+    </Wrapper>
   );
 };
 export default NewExpenseForm;

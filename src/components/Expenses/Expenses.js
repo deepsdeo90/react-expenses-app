@@ -2,6 +2,7 @@ import styles from "./Expenses.module.css";
 import FilterExpenses from "../FilterExpenses/FilterExpenses";
 import { useState } from "react";
 import ExpensesList from "./ExpensesList";
+import Wrapper from "../Helpers/Wrapper";
 
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState("");
@@ -17,7 +18,7 @@ const Expenses = (props) => {
     }
   });
   return (
-    <>
+    <Wrapper>
       <FilterExpenses
         selected={filteredYear}
         onFilterExpenses={filterExpenseHandler}
@@ -27,7 +28,7 @@ const Expenses = (props) => {
       <div className={styles.expenses}>
         <ExpensesList filteredExpense={filteredExpense} />
       </div>
-    </>
+    </Wrapper>
   );
 };
 export default Expenses;
