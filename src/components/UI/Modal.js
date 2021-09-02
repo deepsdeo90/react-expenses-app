@@ -1,8 +1,9 @@
 import styles from "./Modal.module.css";
 import Card from "./Card";
 import Button from "./Button";
+import ReactDOM from "react-dom";
 
-const Modal = (props) => {
+const ModalOverlay = (props) => {
   return (
     <Card className={styles.modal}>
       <div className={styles["modal-content"]}>
@@ -17,6 +18,16 @@ const Modal = (props) => {
         </footer>
       </div>
     </Card>
+  );
+};
+const Modal = (props) => {
+  return ReactDOM.createPortal(
+    <ModalOverlay
+      title={props.title}
+      message={props.message}
+      onCancel={props.onCancel}
+    />,
+    document.getElementById("overlay-root")
   );
 };
 export default Modal;
