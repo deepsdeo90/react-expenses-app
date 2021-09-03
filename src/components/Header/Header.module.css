@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  background: white;
+}
+.logoutbtn {
+  width: 150px;
+  border: none;
+  margin-right: 10px;
+}
